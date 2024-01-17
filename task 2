@@ -1,0 +1,17 @@
+public class FindDuplicateCharacter {
+    public static void main(String[] args) {
+        String word = "Hello";
+        char[] characters = word.toCharArray();
+
+        for (int i = 0; i < characters.length; i++) {
+            for (int j = i + 1; j < characters.length; j++) {
+                if (characters[i] == characters[j]) {
+                    System.out.println("Повторяющийся символ: " + characters[i]);
+                    return;
+                }
+            }
+        }
+
+        System.out.println("В слове нет повторяющихся символов");
+    }
+}
