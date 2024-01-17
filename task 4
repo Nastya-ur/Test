@@ -1,0 +1,21 @@
+public class ClockAngleCalculator {
+    public static double calculateClockAngle(int hours, int minutes) {
+        // Проверка входных данных
+        if (hours < 0 || hours > 12 || minutes < 0 || minutes > 59) {
+            throw new IllegalArgumentException("Некорректное время");
+        }
+
+        // Вычисление угла между стрелками
+        double hourAngle = (hours * 30) + (minutes * 0.5); // Угол часовой стрелки: каждый час - 30 градусов, каждая минута - 0.5 градуса
+        double minuteAngle = minutes * 6; // Угол минутной стрелки: каждая минута - 6 градусов
+
+        double angle = Math.abs(hourAngle - minuteAngle); // Разница между углами
+
+        // Возвращаем наименьший угол (от 0 до 180 градусов)
+        if (angle > 180) {
+            angle = 360 - angle;
+        }
+
+        return angle;
+    }
+}
