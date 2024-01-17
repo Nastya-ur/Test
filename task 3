@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class BaseConverter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введите градусы Цельсия: ");
+        double celsius = scanner.nextDouble();
+
+        System.out.println("Выберите тип конвертации:");
+        System.out.println("1. В Кельвины");
+        System.out.println("2. В Фаренгейты");
+        int choice = scanner.nextInt();
+
+        double result;
+
+        if (choice == 1) {
+            result = convertToKelvin(celsius);
+            System.out.println("Результат конвертации в Кельвины: " + result + " K");
+        } else if (choice == 2) {
+            result = convertToFahrenheit(celsius);
+            System.out.println("Результат конвертации в Фаренгейты: " + result + " °F");
+        } else {
+            System.out.println("Неверный выбор конвертации");
+        }
+    }
+
+    public static double convertToKelvin(double celsius) {
+        return celsius + 273.15;
+    }
+
+    public static double convertToFahrenheit(double celsius) {
+        return (celsius * 9 / 5) + 32;
+    }
+}
