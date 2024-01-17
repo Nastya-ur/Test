@@ -1,0 +1,55 @@
+import java.util.Arrays;
+import java.util.Random;
+
+public class RandomArray {
+    public static void main(String[] args) {
+        // Задаем размер массива
+        int length = 10;
+
+        // Создаем массив
+        int[] array = new int[length];
+
+        // Создаем объект класса Random
+        Random random = new Random();
+
+        // Заполняем массив случайными числами
+        for (int i = 0; i < length; i++) {
+            // Генерируем случайное число от 0 до 100
+            int randomNumber = random.nextInt(101);
+
+            // Добавляем полученное число в массив
+            array[i] = randomNumber;
+        }
+
+        // Выводим массив на экран
+        System.out.println("Массив: " + Arrays.toString(array));
+
+        // Находим максимальное значение в массиве
+        int max = array[0];
+        for (int i = 1; i < length; i++) {
+            if (array[i] > max) {
+                max = array[i];
+            }
+        }
+
+        // Находим минимальное значение в массиве
+        int min = array[0];
+        for (int i = 1; i < length; i++) {
+            if (array[i] < min) {
+                min = array[i];
+            }
+        }
+
+        // Находим среднее значение в массиве
+        int sum = 0;
+        for (int i = 0; i < length; i++) {
+            sum += array[i];
+        }
+        double average = (double) sum / length;
+
+        // Выводим результаты
+        System.out.println("Максимальное значение: " + max);
+        System.out.println("Минимальное значение: " + min);
+        System.out.println("Среднее значение: " + average);
+    }
+}
