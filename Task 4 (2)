@@ -1,0 +1,9 @@
+public class Clock {
+    public static void main(String[] args) {int a = CalcAngleArrows(hours 6, minutes 40); 
+        System.out.println(a); }
+    public static int CalcAngleArrows(int hours, int minutes) 
+    {   int minangle = 6; 
+        int hoursangle = hours * 5 * minangle; int minuteangle = minutes * minangle; 
+        int clocangle= Math.max(hoursangle,minuteangle) - Math.min(hoursangle,minuteangle); 
+        return clocangle > 180? 360-clocangle : clocangle;
+    }}
